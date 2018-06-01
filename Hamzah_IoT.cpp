@@ -13,13 +13,13 @@ HamzahIoT::HamzahIoT(String _API_KEY, EthernetClient _client){
 void HamzahIoT::httpRequest(){
 	client.stop();
 	response = "";
-	char server[] = "www.projectdemokita.xyz";
+	char server[] = "www.publicdata.esy.es";
   	// if there's a successful connection:
   	if (client.connect(server, 80)) {
     	Serial.println("connected");
     	// Make a HTTP request:
-    	client.println("GET /iot.php?API_KEY="+API_KEY+" HTTP/1.1");
-    	client.println("Host: www.projectdemokita.xyz");
+    	client.println("GET /iot/iot.php?API_KEY="+API_KEY+" HTTP/1.1");
+    	client.println("Host: www.publicdata.esy.es");
     	client.println("Connection: close");
     	client.println();
     	lastConnectionTime = millis();
